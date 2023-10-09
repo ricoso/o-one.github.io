@@ -1,17 +1,17 @@
 /**
 * Generated theme by Material Theme Generator
 * https://materialtheme.arcsine.dev
-* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48Izg5Y2MzMyIsIj9lcjwjZGNmMGMyIiwiO2VyPCM2Y2I5MjB$LCIlPmBePCMzNjZjMDIiLCI~ZXI8I2MzZDNiMyIsIjtlcjwjMjI0ZjAxfiwid2Fybj5gXjwjZjUzMjMyIiwiP2VyPCNmY2MyYzIiLCI7ZXI8I2YwMWYxZn4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00IiwiZmFtaWx5PExhdG9$LGBAPCgtMyIsImZhbWlseTxMYXRvfixgQDwoLTIiLCJmYW1pbHk8TGF0b34sYEA8KC0xIiwiZmFtaWx5PExhdG9$LGBAPGhlYWRsaW5lIiwiZmFtaWx5PExhdG9$LGBAPHRpdGxlIiwiZmFtaWx5PExhdG9$LGBAPHN1YiktMiIsImZhbWlseTxMYXRvfixgQDxzdWIpLTEiLCJmYW1pbHk8TGF0b34sYEA8Ym9keS0yIiwiZmFtaWx5PExhdG9$LGBAPGJvZHktMSIsImZhbWlseTxMYXRvfixgQDxidXR0b24iLCJmYW1pbHk8TGF0b34sYEA8Y2FwdGlvbiIsImZhbWlseTxMYXRvfixgQDxpbnB1dCIsImZhbWlseTxMYXRvIiwic2l6ZT5udWxsfV0sImljb25zPFR3b1RvbmUiLCI~bmVzcz50cnVlLCJ2ZXJzaW9uPjEyfQ==
+* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48I2JlZWRhOCIsIj9lcjwjZWNmYWU1IiwiO2VyPCNhN2U1OGR$LCIlPmBePCM0ZTdjMDMiLCI~ZXI8I2NhZDhiMyIsIjtlcjwjMzU1ZjAyfiwid2Fybj5gXjwjZmYwMDAwIiwiP2VyPCNmZmIzYjMiLCI7ZXI8I2ZmMDAwMH4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00fixgQDwoLTN$LGBAPCgtMn4sYEA8KC0xfixgQDxoZWFkbGluZX4sYEA8dGl0bGV$LGBAPHN1YiktMn4sYEA8c3ViKS0xfixgQDxib2R5LTJ$LGBAPGJvZHktMX4sYEA8YnV0dG9ufixgQDxjYXB0aW9ufixgQDxpbnB1dCIsInNpemU$bnVsbH1dLCJpY29uczxUd29Ub25lIiwiP25lc3M$dHJ1ZSwidmVyc2lvbj4xM30=
 */
 
-@use '~@angular/material' as mat;
+@use '@angular/material' as mat;
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 
 // Fonts
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone';
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 $fontConfig: (
   display-4: mat.define-typography-level(112px, 112px, 300, 'Lato', -0.0134em),
@@ -144,23 +144,23 @@ $mat-dark-theme-background: (
 );
 
 // Compute font config
-@include mat.core($fontConfig);
+@include mat.core();
 
 // Theme Config
 
 body {
-  --primary-color: #89cc33;
-  --primary-lighter-color: #dcf0c2;
-  --primary-darker-color: #6cb920;
+  --primary-color: #beeda8;
+  --primary-lighter-color: #ecfae5;
+  --primary-darker-color: #a7e58d;
   --text-primary-color: #{$dark-primary-text};
   --text-primary-lighter-color: #{$dark-primary-text};
   --text-primary-darker-color: #{$dark-primary-text};
 }
 $mat-primary: (
-  main: #89cc33,
-  lighter: #dcf0c2,
-  darker: #6cb920,
-  200: #89cc33, // For slide toggle,
+  main: #beeda8,
+  lighter: #ecfae5,
+  darker: #a7e58d,
+  200: #beeda8, // For slide toggle,
   contrast : (
     main: $dark-primary-text,
     lighter: $dark-primary-text,
@@ -171,18 +171,18 @@ $theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
 
 
 body {
-  --accent-color: #366c02;
-  --accent-lighter-color: #c3d3b3;
-  --accent-darker-color: #224f01;
+  --accent-color: #4e7c03;
+  --accent-lighter-color: #cad8b3;
+  --accent-darker-color: #355f02;
   --text-accent-color: #{$light-primary-text};
   --text-accent-lighter-color: #{$dark-primary-text};
   --text-accent-darker-color: #{$light-primary-text};
 }
 $mat-accent: (
-  main: #366c02,
-  lighter: #c3d3b3,
-  darker: #224f01,
-  200: #366c02, // For slide toggle,
+  main: #4e7c03,
+  lighter: #cad8b3,
+  darker: #355f02,
+  200: #4e7c03, // For slide toggle,
   contrast : (
     main: $light-primary-text,
     lighter: $dark-primary-text,
@@ -193,18 +193,18 @@ $theme-accent: mat.define-palette($mat-accent, main, lighter, darker);
 
 
 body {
-  --warn-color: #f53232;
-  --warn-lighter-color: #fcc2c2;
-  --warn-darker-color: #f01f1f;
+  --warn-color: #ff0000;
+  --warn-lighter-color: #ffb3b3;
+  --warn-darker-color: #ff0000;
   --text-warn-color: #{$light-primary-text};
   --text-warn-lighter-color: #{$dark-primary-text};
   --text-warn-darker-color: #{$light-primary-text};
 }
 $mat-warn: (
-  main: #f53232,
-  lighter: #fcc2c2,
-  darker: #f01f1f,
-  200: #f53232, // For slide toggle,
+  main: #ff0000,
+  lighter: #ffb3b3,
+  darker: #ff0000,
+  200: #ff0000, // For slide toggle,
   contrast : (
     main: $light-primary-text,
     lighter: $dark-primary-text,

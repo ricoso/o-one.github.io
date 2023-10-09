@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "export NODE_OPTIONS=--openssl-legacy-provider; ng serve",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider; ng build",
-    "watch": "export NODE_OPTIONS=--openssl-legacy-provider; ng build --watch --configuration development",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider; ng build --base-href /angular-app/",
     "test": "ng test"
   },
   "private": true,

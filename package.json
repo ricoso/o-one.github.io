@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "export NODE_OPTIONS=--openssl-legacy-provider; ng serve",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider; ng build --base-href /angular-app/",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider; ng build --base-href /o-one.github.io/",
     "test": "ng test"
   },
   "private": true,

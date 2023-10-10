@@ -1,0 +1,19 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { RootRoutingModule } from './root-routing.module';
+import { RootComponent } from './root.component';
+import {MatButtonModule} from '@angular/material/button';
+
+
+@NgModule({
+  declarations: [
+    RootComponent
+  ],
+  imports: [
+    CommonModule,
+    RootRoutingModule,
+    MatButtonModule,
+  ]
+})
+export class RootModule { }

@@ -1,0 +1,19 @@
+.main-page-frame {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  place-content: center space-around;
+  align-items: center;
+
+  .first-button {
+    padding-bottom: 1rem;
+  }
+
+  button {
+    height: 20rem;
+    width: 22rem;
+    font-size: 2rem;
+    line-height: 4rem;
+
+  }
+}

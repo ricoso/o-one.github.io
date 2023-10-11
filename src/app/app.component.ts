@@ -14,13 +14,5 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.breakpoint = window.innerWidth <= 400 ? 1 : 6;
-    this.router.events.subscribe((event) => {
-      console.log(event);
-    });
-  }
-
-  onResize(event: any) {
-    this.breakpoint = event.target.innerWidth <= 400 ? 1 : 6;
   }
 }

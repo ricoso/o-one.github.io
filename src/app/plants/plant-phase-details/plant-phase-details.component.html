@@ -1,0 +1,90 @@
+<div class="col-12 plant-headline">
+  <h2>Wachstumsphasen Werte {{ id }}</h2>
+</div>
+<mat-card>
+  <mat-card-content >
+      <h4>Parameter</h4>
+      <div class="row">
+        <div  class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Bodenfeuchte in %</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.groundhumidity)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Temperatur in °C</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.temperature)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Luftfeuchtigkeit in %</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.airhumidity)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Lichtintänsität in Lux</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.lux)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>CO2-Gehalt in ppm</mat-label>
+            <input matInput  [formControl]="$any(this.form.controls.co2)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>ph-Wert</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.ph)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Stickstoff in mg/m²</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.nitrogen)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Phosphor in mg/m²</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.phosphor)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Kalium in mg/m²</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.potassium)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <h4>Kontrollwerte</h4>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Chlorophyllgel in mg/m²</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.chlorophyll)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Pflanzenhöhe in cm</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.height)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+          <mat-form-field class="example-full-width">
+            <mat-label>Blattzahl</mat-label>
+            <input matInput [formControl]="$any(this.form.controls.leafs)" placeholder="0" min="1" type="number">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+        </div>
+        <div class="col-2">
+          <button mat-flat-button color="primary" (click)="onSave()" [disabled]="!form.valid">Speichern</button>
+        </div>
+      </div>
+  </mat-card-content>
+</mat-card>

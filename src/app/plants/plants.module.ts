@@ -7,11 +7,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { PlantPhaseDetailsComponent } from './plant-phase-details/plant-phase-details.component';
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
-    PlantsComponent
+    PlantsComponent,
+    PlantPhaseDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +23,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatCardModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ]
 })
 export class PlantsModule { }

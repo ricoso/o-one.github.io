@@ -1,24 +1,20 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {PlantDate} from '../iface/data.iface';
 
 @Injectable({
   providedIn: 'root'
 })
   export class DataService {
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
+  plantKey = 'plant'
 
-  constructor(private httpClient: HttpClient) {}
 
-  getData(filename: string) {
-    return this.httpClient.get(`assets/${filename}.json`);
+  getData(): PlantDate {
+    return JSON.parse(localStorage.getItem(this.plantKey) as any) as PlantDate;
   }
 
-  saveData(filename: string, data: any) {
-    return this.httpClient.put(`assets/${filename}.json`, data, this.httpOptions);
+  saveData(data: string) {
+    return localStorage.setItem(this.plantKey, data);
   }
 }

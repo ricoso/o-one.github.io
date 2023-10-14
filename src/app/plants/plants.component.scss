@@ -1,0 +1,34 @@
+mat-icon {
+  margin: 10px;
+  position: absolute;
+}
+
+.plant-headline {
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+mat-card {
+  margin: 0 20px;
+
+  .plant-input-cycle {
+    mat-form-field {
+      width: 100%;
+    }
+    button {
+      margin-top: 0.6rem
+    }
+  }
+
+  .plant-cycle-header {
+    margin-top: 0.5rem;
+  }
+
+  .plant-input-cycle-button-add {
+    margin-left: 0.8rem;
+  }
+
+  .plant-input-cycle-button-add-label {
+    margin-top: 0.3rem;
+  }
+}

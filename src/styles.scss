@@ -13,6 +13,7 @@
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @include mat.core();
+@import '~material-icons/iconfont/material-icons.css';
 
 $fontConfig: (
   display-4: mat.define-typography-level(112px, 112px, 300, 'Roboto', -0.0134em),
@@ -259,4 +260,8 @@ $altTheme: (
   .mat-badge-content {
     font-family: 'Roboto';
   }
+}
+
+mat-icon {
+  font-family: 'Material Icons' !important;
 }

@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
   export class DataService {
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private httpClient: HttpClient) {}
 
@@ -13,6 +19,6 @@ import { HttpClient } from '@angular/common/http';
   }
 
   saveData(filename: string, data: any) {
-    return this.httpClient.put(`assets/${filename}.json`, data);
+    return this.httpClient.put(`assets/${filename}.json`, data, this.httpOptions);
   }
 }

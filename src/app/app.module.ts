@@ -24,9 +24,9 @@ export class AppModule {
   private URL = 'assets/data.json';
 
   constructor(private dataService: DataService) {
-    this.dataService.getData('data').subscribe(data => {
+/*    this.dataService.getData('data').subscribe(data => {
       console.log(':::', data);
-    });
+    });*/
   }
 
 

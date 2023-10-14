@@ -1,1 +1,45 @@
+<div class="back_icon">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" routerLink="/"></mat-icon>
+</div>
+<div class="row">
+  <div class="col-12 plant-headline">
+    <h2>Wachstumstabelle einrichten</h2>
+  </div>
+</div>
+<mat-card>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 plant-input-cycle">
+        <mat-form-field class="example-full-width">
+          <mat-label>Wachstumszeitraum gesamter Zycklus in Tagen</mat-label>
+          <input matInput placeholder="0" min="1" type="number">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+        <button class="col-1 plant-input-cycle-button-add" mat-flat-button color="primary" (click)="onAddPhase()">+</button>
+        <button class="col-1 plant-input-cycle-button-add" mat-flat-button color="primary" (click)="onDeletePhase()">-</button>
+        <mat-label class="col-6 plant-input-cycle-button-add-label">Hinzufügen / Löschen Wachstumsphase</mat-label>
+    </div>
+    <div *ngFor="let i of plantCyclePhases" class="row" >
+      <h4 class="plant-cycle-header">Wachstumsphase {{ i }}</h4>
+      <div class="col-lg-2 col-md-2 col-sm-12 plant-input-cycle">
+        <mat-form-field class="example-full-width">
+          <mat-label>Start</mat-label>
+          <input matInput placeholder="0" min="1" type="number">
+        </mat-form-field>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12 plant-input-cycle">
+        <mat-form-field class="example-full-width">
+          <mat-label>Ende</mat-label>
+          <input matInput placeholder="0" min="1" type="number">
+        </mat-form-field>
+      </div>
+      <div class="col-1 plant-input-cycle">
+        <button mat-flat-button color="primary" routerLink="/:id">Details</button>
+      </div>
 
+    </div>
+
+  </mat-card-content>
+</mat-card>

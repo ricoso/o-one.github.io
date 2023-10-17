@@ -27,29 +27,29 @@
         <button class="col-1 plant-input-cycle-button-add" mat-flat-button color="primary" (click)="onDeletePhase()">-</button>
         <mat-label class="col-6 plant-input-cycle-button-add-label">Hinzufügen / Löschen Wachstumsphase</mat-label>
     </div>
-    <div *ngFor="let i of plantCyclePhases" class="row" >
+    <div *ngFor="let item of plantCyclePhases; index as i" class="row" >
       <h4 class="plant-cycle-header">Wachstumsphase {{ i }}</h4>
       <div class="col-lg-2 col-md-2 col-sm-12 plant-input-cycle">
         <mat-form-field class="example-full-width">
           <mat-label>Start</mat-label>
-          <input matInput placeholder="0" min="1" type="number" (change)="onChangeStartDay($event, i)">
+          <input matInput placeholder="0" min="1" type="number" [value]="item.startDay" (change)="onChangeStartDay($event, i +1)">
         </mat-form-field>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-12 plant-input-cycle">
         <mat-form-field class="example-full-width">
           <mat-label>Ende</mat-label>
-          <input matInput placeholder="0" min="1" type="number" (change)="onChangeEndDay($event, i)">
+          <input matInput placeholder="0" min="1" type="number" [value]="item.endDay"  (change)="onChangeEndDay($event, i +1)">
         </mat-form-field>
       </div>
       <div class="col-1 plant-input-cycle">
-        <button mat-flat-button color="primary" routerLink="./detail/{{i}}">Details</button>
+        <button mat-flat-button color="primary" routerLink="./detail/{{i + 1}}">Details</button>
       </div>
     </div>
     <div class="row">
-      <div class="col-10">
+      <div class="col-9 ">
       </div>
-      <div class="col-2">
-        <button mat-flat-button color="primary" (click)="onSave()" [disabled]="!form.valid">Speichern</button>
+      <div class="col-3">
+        <button class="ml-auto" mat-flat-button color="primary" (click)="onSave()" [disabled]="!form.valid">Speichern</button>
       </div>
     </div>
 

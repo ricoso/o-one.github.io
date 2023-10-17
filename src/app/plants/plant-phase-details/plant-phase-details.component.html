@@ -1,3 +1,6 @@
+<div class="back_icon">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back" routerLink="/plants"></mat-icon>
+</div>
 <div class="col-12 plant-headline">
   <h2>Wachstumsphasen Werte {{ id }}</h2>
 </div>
@@ -80,10 +83,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-10">
+        <div class="col-9">
         </div>
-        <div class="col-2">
-          <button mat-flat-button color="primary" (click)="onSave()" [disabled]="!form.valid">Speichern</button>
+        <div class="col-3">
+          <button mat-flat-button class="ml-auto" color="primary" (click)="onSave()" [disabled]="!form.valid">Speichern</button>
         </div>
       </div>
   </mat-card-content>

@@ -34,6 +34,8 @@ export class PlantPhaseDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+    let data = this.dateservice.getData();
+    this.form.patchValue(data.phases[this.id].parameters)
   }
 
   onSave = () => {

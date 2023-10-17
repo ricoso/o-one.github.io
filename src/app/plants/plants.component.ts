@@ -59,6 +59,7 @@ export class PlantsComponent implements OnInit {
 
   onSave = () => {
     if (this.form.valid) {
+      console.log(':::', this.data);
       this.data.description = this.form.value;
       this.dataservice.saveData(JSON.stringify(this.data));
     }

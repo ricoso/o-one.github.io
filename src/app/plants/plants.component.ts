@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {DataService} from '../service/data.service';
 import {PlantDate} from '../iface/data.iface';
 import {Router} from '@angular/router';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-plants',
@@ -11,29 +12,49 @@ import {Router} from '@angular/router';
 export class PlantsComponent {
 
   plantCyclePhases = new Array<number>();
-  data: PlantDate = {duration: 0, phases: {}}
+  data: PlantDate = {description: '', maxPhase: 0, phases: {}};
 
-  constructor(protected dataservice: DataService, protected router: Router) {
+  form = new FormGroup<any>({
+    description: new FormControl('', Validators.required),
+    maxPhase: new FormControl('', Validators.required)
+  });
 
+  constructor(protected dataservice: DataService,
+              protected router: Router) {
   }
 
   onAddPhase = () => {
     const i = this.plantCyclePhases.length + 1;
-    this.data.phases[i] = {} as any;
-    this.plantCyclePhases.push(i);
-    this.dataservice.saveData(JSON.stringify(this.data));
+    if (i < 11) {
+      this.data.phases[i] = {duration: {startDay: 0, endDay: 0}} as any;
+      this.plantCyclePhases.push(i);
+      this.dataservice.saveData(JSON.stringify(this.data));
+    }
   }
 
   onDeletePhase = () => {
     const i = this.plantCyclePhases.length;
-    const { [i]: data , ...rest} = this.data.phases;
+    const {[i]: data, ...rest} = this.data.phases;
     this.data.phases = rest;
     this.plantCyclePhases.pop();
     this.dataservice.saveData(JSON.stringify(this.data));
   }
 
-  navigateTo = (id: number) => {
-    this.router.navigate([`/details/${id}`]);
+  onSave = () => {
+    if (this.form.valid) {
+      let data: PlantDate = this.dataservice.getData();
+      data = this.form.value as any;
+      this.dataservice.saveData(JSON.stringify(data));
+    }
   }
 
+  onChangeStartDay = (value: any, id: any) => {
+    this.data.phases[id].duration.startDay = value.currentTarget.value;
+    this.dataservice.saveData(JSON.stringify(this.data));
+  }
+
+  onChangeEndDay = (value: any, id: any) => {
+    this.data.phases[id].duration.endDay = value.currentTarget.value;
+    this.dataservice.saveData(JSON.stringify(this.data));
+  }
 }

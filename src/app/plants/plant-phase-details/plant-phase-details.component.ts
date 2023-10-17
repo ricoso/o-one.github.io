@@ -10,7 +10,7 @@ import {DataService} from '../../service/data.service';
 })
 export class PlantPhaseDetailsComponent implements OnInit {
   id = 0;
-  form = this.formBuilder.group({
+  form = this.formbuilder.group({
     groundhumidity: ['', Validators.required],
     temperature: ['', [Validators.required]],
     airhumidity: ['', [Validators.required]],
@@ -26,7 +26,9 @@ export class PlantPhaseDetailsComponent implements OnInit {
 
   });
 
-  constructor(protected route: ActivatedRoute, protected formBuilder: FormBuilder, protected dateservice: DataService) {
+  constructor(protected route: ActivatedRoute,
+              protected formbuilder: FormBuilder,
+              protected dateservice: DataService) {
 
   }
 
@@ -35,7 +37,6 @@ export class PlantPhaseDetailsComponent implements OnInit {
   }
 
   onSave = () => {
-    debugger;
     if (this.form.valid) {
       let data = this.dateservice.getData();
       data.phases[this.id].parameters = this.form.value;
